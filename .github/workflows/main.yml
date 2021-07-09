@@ -72,8 +72,8 @@ jobs:
 
             - name: Push to feedz.io
               run: dotnet nuget push **/*.nupkg -k ${{ secrets.FEEDZ_API_KEY }} -s https://f.feedz.io/forevolve/eztelemetry/nuget/index.json
-              if: github.event_name == 'pull_request'
+              # if: github.event_name == 'pull_request'
 
-            - name: Push to NuGet.org
-              run: dotnet nuget push **/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
-              if: github.event_name == 'push'
+            # - name: Push to NuGet.org
+            #   run: dotnet nuget push **/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+            #   if: github.event_name == 'push'
